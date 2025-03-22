@@ -1,0 +1,104 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           bujo
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/sfpl-gopher#readme>
+homepage:       https://github.com/githubuser/sfpl-gopher#readme
+bug-reports:    https://github.com/githubuser/sfpl-gopher/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2025 Author name here
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/sfpl-gopher
+
+library
+  exposed-modules:
+      Actions
+      FileFormat
+      Habits
+      MenuFormatting
+      Routes
+      TagIndex
+      Utils
+  other-modules:
+      Paths_bujo
+  autogen-modules:
+      Paths_bujo
+  hs-source-dirs:
+      src
+  default-extensions:
+      OverloadedStrings
+      DeriveGeneric
+      DeriveAnyClass
+      OverloadedRecordDot
+      DuplicateRecordFields
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      Venusia
+    , aeson
+    , base
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , network
+    , text
+    , time
+    , unordered-containers
+    , yaml
+  default-language: GHC2021
+
+executable bujo-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_bujo
+  autogen-modules:
+      Paths_bujo
+  hs-source-dirs:
+      app
+  default-extensions:
+      OverloadedStrings
+      DeriveGeneric
+      DeriveAnyClass
+      OverloadedRecordDot
+      DuplicateRecordFields
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Venusia
+    , base
+    , bujo
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , network
+    , time
+    , unordered-containers
+  default-language: GHC2021
+
+test-suite bujo-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_bujo
+  autogen-modules:
+      Paths_bujo
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , bujo
+  default-language: Haskell2010
